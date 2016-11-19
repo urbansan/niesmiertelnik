@@ -1,0 +1,28 @@
+div.switch {
+	width: 80px;
+	height: 40px;
+	border-radius: 25px;
+	cursor: pointer;
+}
+
+div.switch .handler {
+	width: 30px;
+	height: 30px;
+	background: #fff;
+	border-radius: 15px;
+	margin: 5px;
+	display: inline-block;
+	padding: 0;
+}
+
+div.switch .handler i {
+	font-size: 27px;
+	margin: 1px 0 0 -2px;
+	
+}
+
+div.switch.disabled {background: #ff7f68;}
+div.switch.enabled {background: #a9cf55;}
+
+div.switch.disabled .hadler{float: left;}
+div.switch.enabled .handler{float: right;}
