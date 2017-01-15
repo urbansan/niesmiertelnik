@@ -15,18 +15,18 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from it_blog.views import it_blog
+from blogs.views import *
 from moja_stonka.views import index
-from moto.views import moto
-from climbing.views import climbing
-from guitar.views import guitar
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^it_blog/', it_blog, name='it_blog'),
-    url(r'^moto/', moto, name='moto'),
-    url(r'^climbing/', climbing, name='climbing'),
-    url(r'^guitar/', guitar, name='guitar'),
-    url(r'^', index, name='index'),
-    # url(r'^it_blog/', include('it_blog.urls')),
+    url(r'^about/$', about, name='about'),
+    url(r'^sidebar/$', sidebar, name='sidebar'),
+    url(r'^$', blob, name='blob'),
+    url(r'^zawijanie/$', zawijanie, name='zawijanie'),
+    url(r'^it_blog/$', it_blog, name='it_blog'),
+    url(r'^moto/$', moto, name='moto'),
+    url(r'^climbing/$', moto, name='moto'),
+    url(r'^guitar/$', moto, name='moto'),
+    url(r'^(?P<article_link>.*)/', post, name='post'),
 ]

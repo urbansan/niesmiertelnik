@@ -5,42 +5,88 @@
 	<title>Nieśmiertelnik</title>
 	<meta charset="utf-8" />
 	{% load staticfiles %}
+
 	<script src="{% static 'lib/js/jquery-3.1.1.min.js' %}" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
   	<link href="{% static 'lib/css/bootstrap.min.css'%}" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<script src="{% static 'lib/js/bootstrap.min.js' %}" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<!-- <script src="{% static 'lib/js/bootstrap.min.js' %}" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
 	<!-- <link rel="stylesheet" href="{% static 'lib/css/lights.css' %}" type = "text/css"/> -->
 	<script src="{% static 'lib/js/a9745be35e.js' %}"></script>
-
+	<link href="{% static 'lib/css/blog.css' %}" rel="stylesheet">
 	
+	<script src="{% static 'js/sticky_nav.js' %}"></script>
+	<script src="{% static 'js/ajax.js' %}"></script>
+	<script src="{% static 'js/blog_post_interactives.js' %}"></script>
+	<link href="{% static 'css/sticky_nav.css' %}" rel="stylesheet">
+	<link href="{% static 'css/custom.css' %}" rel="stylesheet">
+	<link href="{% static 'css/karuzela.css' %}" rel="stylesheet">
+	<link rel="icon" type="image/png" href="{% static 'img/urbanVirt.ico' %}">
+	<link rel="stylesheet" href="{% static 'lib/css/font-awesome-4.7.0/css/font-awesome.min.css' %}">
 
 	<meta name="viewport" content = "width=device-width, initial-scale=1.0">
 </head>
 
+
+
 <body class="body">
-	<div class="container">
+
+
+<header class="siteHeader">
+	
+
+<img src="{% static 'img/background_header.jpg'%}" id="top_img">
+</header>
+
+	<nav class="navbar navbar-inverse">
+		<div class="container-fluid">
+        	  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-9" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+			<a href="/"><img src="{% static 'img/urbanVirt.jpeg' %}" title="about me" id="ikonka"/></a>
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-9">
+
+				<ul class="nav navbar-nav" id="main_navbar">
+					<li id="blob">
+						<a href="/">Blob</a>
+					</li>
+					<li>
+						<a class="none_used" href="#">|</a>
+					</li>
+					<li id="it_blog">
+						<a href="/it_blog/">Linux Upstream</a>
+					</li>
+					<li id="moto">
+						<a href="/moto/">Moto roaming</a>
+					</li>
+					<li id="climbing">
+						<a href="/climbing/">Climbing</a>
+					</li>
+					<li id="guitar">
+						<a href="/guitar/">Guitar stuff</a>
+					</li>
+				</ul>
+				<ul class="nav navbar-nav" id="side_navbar">
+				<!-- <ul class="nav"> -->
+					<li>
+						<a target="_blank" href="https://github.com/urbansan"><i class="fa fa-github" aria-hidden="false"></i></a>
+					</li>
+					<li>
+						<a target="_blank" href="https://www.linkedin.com/in/krzysztof-urba%C5%84czyk-2430bb125/"><i class="fa fa-linkedin" aria-hidden="false"></i></a>
+					</li>
+					<li>
+						<a target="_blank" href="https://www.youtube.com/user/urbansan"><i class="fa fa-youtube-square" aria-hidden="false"></i></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div class="container-fluid">
 		{% block content %}
-		{% endblock %}	
+		{% endblock %}
 	</div>
 
-stronk glowna <br/>
-
-<ul>
-	<li id = "it_blog">Linux Upstream</li>
-	<li id = "moto">Moto blog</li>
-	<li id = "climbing">Climbing blog</li>
-	<li id = "guitar">Guitar blog</li>
-</ul>
-
-
-
-<div id="currently_displayed">
-	
-</div>
-	<footer>
-		
-	</footer>	
-	
-	<script src="{% static 'ajax/scripts.js' %}"></script>
 </body>
 
 </html>

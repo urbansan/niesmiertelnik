@@ -1,0 +1,12 @@
+
+<h4>Popular posts:</h4>
+<ol class="list-unstyled">
+    {% for post in posts %}
+    <li>
+        <a href="/{{ post.article_link }}">
+            {{post.title}}
+        </a>
+    </li>
+    <!-- /.blog-post -->
+    {% endfor %}
+</ol>

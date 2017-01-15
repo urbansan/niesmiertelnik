@@ -1,0 +1,101 @@
+{% extends "index.html" %}
+{% block content %}
+{% load staticfiles %}
+<div class="container-fluid to-center">
+	<div class="blog-header whited">
+
+{% if blog == 'it' %}
+		<h1 class="blog-title"><i class="fa fa-linux" aria-hidden="true"></i> Linux Upstream</h1>
+		<p class="lead blog-description">IT things I found useful and would like to share with the community.</p>
+{% elif blog == 'moto' %}	
+		<h1 class="blog-title"><i class="fa fa-motorcycle" aria-hidden="true"></i> Moto adventures</h1>
+		<p class="lead blog-description">My closer and farrer journeys :)</p>
+{% elif blog == 'blob' %}	
+		<h1 class="blog-title"><i class="fa fa-globe" aria-hidden="true"></i> All posts</h1>
+		<p class="lead blog-description">For convenience :)</p>
+{% endif %}
+	</div>
+	<div class="row">
+		<div class="col-sm-9 blog-main whited" id="blog_content">
+
+{% if blog_main %}
+
+{% for post in posts %}
+	<div class="blog-post">
+		<a href="/{{ post.article_link }}/">
+			<h2>{{post.title}}</h2>
+		</a>
+		<p class="blog-post-meta">
+			{{post.date}}
+			<a href="#">{{post.author}}</a>
+			<br/>views: {{post.views_count}}	
+		</p>
+
+	</div>
+<!-- /.blog-post -->
+{% endfor %}
+
+{% else %}
+	<div class="blog-post">
+		<h2 class="blog-post-title">{{post.title}}</h2>
+		<p class="blog-post-meta">
+			{{post.date}}
+			<a href="#">{{post.author}}</a>
+			<br/>views: {{post.views_count}}	
+		</p>
+		{{post.body | safe}}
+
+	</div>
+
+
+
+				<nav>
+					<ul class="pager">
+					{% if previous %}
+						<li>
+							<a href="/{{ previous.article_link }}/">Previous</a>
+						</li>
+					{% endif %}
+					{% if next %}
+						<li>
+							<a href="/{{ next.article_link }}/">Next</a>
+						</li>
+					{% endif %}
+					</ul>
+
+				</nav>
+{% endif %}
+				<div id="pad-footer">
+				{% include 'footer.html' %}	
+				</div>
+			</div>
+			<!-- /.blog-main -->
+			<div class="col-sm-3 blog-sidebar">
+				<div class="sidebar-module whited" id="boczniaczek">
+				</div>
+			</div>
+			<!-- /.blog-sidebar -->
+
+						
+
+
+		</div>
+				
+		<!-- /.row -->
+
+	</div>
+
+	<!-- /.container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{% static 'lib/js/jquery.min.js'%}"><\/script>')</script>
+    <script src= "{% static 'lib/js/bootstrap.min.js'%}"</script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{% static 'lib/js/ie10-viewport-bug-workaround.js'%}"></script>
+
+    {% endblock %}
+
